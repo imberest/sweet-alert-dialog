@@ -93,7 +93,7 @@ A error message：
         .show();
         A error message：
         
-![image](https://raw.githubusercontent.com/imberest/sweet-alert-dialog/master/oops_normal.png)
+![image](https://raw.githubusercontent.com/imberest/sweet-alert-dialog/master/error_normal.png)
 
 A error message with Title text size 50:
 
@@ -103,7 +103,7 @@ A error message with Title text size 50:
         .setContentText("Title Text size 50!")
         .show();
         
-![image](https://raw.githubusercontent.com/imberest/sweet-alert-dialog/master/oops_50.png)
+![image](https://raw.githubusercontent.com/imberest/sweet-alert-dialog/master/error_50.png)
 
 
 
