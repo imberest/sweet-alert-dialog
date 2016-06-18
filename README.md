@@ -91,6 +91,18 @@ A error message：
         .setTitleText("Oops...")
         .setContentText("Something went wrong!")
         .show();
+        A error message：
+        
+![image](https://raw.githubusercontent.com/imberest/sweet-alert-dialog/master/oops_normal.png)
+
+    new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
+        .setTitleText("Oops...")
+        .setContentText("Something went wrong!")
+        .show();
+        
+![image](https://raw.githubusercontent.com/imberest/sweet-alert-dialog/master/oops_50.png)
+
+
 
 A warning message：
 
