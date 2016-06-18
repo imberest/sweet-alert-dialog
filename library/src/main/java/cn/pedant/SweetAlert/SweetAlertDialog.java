@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
@@ -33,7 +34,9 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     private TextView mTitleTextView;
     private TextView mContentTextView;
     private String mTitleText;
+    private float mTitleTextSize = 19;
     private String mContentText;
+    private float mContentTextSize = 14;
     private boolean mShowCancel;
     private boolean mShowContent;
     private String mCancelText;
@@ -158,7 +161,9 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mCancelButton.setOnClickListener(this);
 
         setTitleText(mTitleText);
+        setTitleTextSize(mTitleTextSize);
         setContentText(mContentText);
+        setContentTextSize(mContentTextSize);
         setCancelText(mCancelText);
         setConfirmText(mConfirmText);
         changeAlertType(mAlertType, true);
@@ -179,6 +184,8 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mSuccessTick.clearAnimation();
         mSuccessLeftMask.clearAnimation();
         mSuccessRightMask.clearAnimation();
+        mTitleTextSize = 19;
+        mContentTextSize = 14;
     }
 
     private void playAnimation () {
@@ -247,13 +254,11 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         }
         return this;
     }
-        
-    public SweetAlertDialog setTitleText (String text, int size) {
-        mTitleText = text;
-        int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, size, getResources().getDisplayMetrics());
+
+    public SweetAlertDialog setTitleTextSize (float size) {
+        mTitleTextSize = size;
         if (mTitleTextView != null && mTitleText != null) {
-            mTitleTextView.setText(mTitleText);
-            mTitleTextView.setTextSize(height);
+            mTitleTextView.setTextSize(mTitleTextSize);
         }
         return this;
     }
@@ -283,14 +288,12 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         }
         return this;
     }
-    
-    public SweetAlertDialog setContentText (String text, int size) {
-        mContentText = text;
-        int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, size, getResources().getDisplayMetrics());
+
+    public SweetAlertDialog setContentTextSize (float size) {
+        mContentTextSize = size;
         if (mContentTextView != null && mContentText != null) {
             showContentText(true);
-            mContentTextView.setText(mContentText);
-            mContentTextView.setTextSize(height);
+            mContentTextView.setTextSize(mContentTextSize);
         }
         return this;
     }
