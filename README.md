@@ -95,9 +95,12 @@ A error message：
         
 ![image](https://raw.githubusercontent.com/imberest/sweet-alert-dialog/master/oops_normal.png)
 
+A error message with Title text size 50:
+
     new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
         .setTitleText("Oops...")
-        .setContentText("Something went wrong!")
+        .setTitleTextSize(50)
+        .setContentText("Title Text size 50!")
         .show();
         
 ![image](https://raw.githubusercontent.com/imberest/sweet-alert-dialog/master/oops_50.png)
