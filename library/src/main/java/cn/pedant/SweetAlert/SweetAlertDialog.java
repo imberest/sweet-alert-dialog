@@ -246,6 +246,15 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
             mTitleTextView.setText(mTitleText);
         }
         return this;
+        
+    public SweetAlertDialog setTitleText (String text, int size) {
+        mTitleText = text;
+        int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, size, getResources().getDisplayMetrics());
+        if (mTitleTextView != null && mTitleText != null) {
+            mTitleTextView.setText(mTitleText);
+            mTitleTextView.setTextSize(height);
+        }
+        return this;
     }
 
     public SweetAlertDialog setCustomImage (Drawable drawable) {
@@ -270,6 +279,17 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         if (mContentTextView != null && mContentText != null) {
             showContentText(true);
             mContentTextView.setText(mContentText);
+        }
+        return this;
+    }
+    
+    public SweetAlertDialog setContentText (String text, int size) {
+        mContentText = text;
+        int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, size, getResources().getDisplayMetrics());
+        if (mContentTextView != null && mContentText != null) {
+            showContentText(true);
+            mContentTextView.setText(mContentText);
+            mContentTextView.setTextSize(height);
         }
         return this;
     }
